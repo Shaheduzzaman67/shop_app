@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:shopapp/model/DrinkType.dart';
+import 'package:shopapp/widget/DrinkList.dart';
 import 'package:shopapp/widget/DrinksCarousel.dart';
 
 class StoreHomePage extends StatelessWidget {
@@ -17,6 +19,7 @@ class StoreHomePage extends StatelessWidget {
       body: Column(
         children: <Widget>[
           DrinksCarousel(),
+          DrinkList(),
         ],
       ),
     );
