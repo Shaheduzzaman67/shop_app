@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:shopapp/widget/DrinkCards.dart';
 
@@ -9,21 +11,35 @@ class DrinksCarousel extends StatefulWidget {
 class _DrinksCarouselState extends State<DrinksCarousel> with SingleTickerProviderStateMixin {
 
   TabController _tabController;
+  Timer _carouselTimer;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     _tabController = TabController(length: cofeeType.length, vsync: this);
+    _carouselTimer = Timer.periodic(
+        Duration(
+          seconds: 4,
+        ),
+        (timer){
+          _changeImage(delta: 1);
+        }
+    );
   }
   @override
   void dispose() {
     // TODO: implement dispose
     super.dispose();
     _tabController.dispose();
+    _carouselTimer.cancel();
   }
 
   void _changeImage ({int delta, bool userInput= false}){
+    if(userInput){
+      _carouselTimer.cancel();
+    }
+    imageCache.clear();
   var newtabIndex= _tabController.index + delta;
   if(newtabIndex>= cofeeType.length){
     newtabIndex = 0;
