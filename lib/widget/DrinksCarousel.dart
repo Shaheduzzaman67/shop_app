@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:scoped_model/scoped_model.dart';
+import 'package:shopapp/model/DrinkListModel.dart';
 import 'package:shopapp/widget/DrinkCards.dart';
 
 class DrinksCarousel extends StatefulWidget {
@@ -69,14 +71,40 @@ class _DrinksCarouselState extends State<DrinksCarousel> with SingleTickerProvid
         ),
         child: Stack(
           children: <Widget>[
-            TabBarView(
-              controller: _tabController,
-              children: mainType.map((drinkType){
-                return DrinkCards(
-                  drinkType: drinkType,
+            ScopedModelDescendant<DrinkListModel>(
+              rebuildOnChange: false,
+              builder: (context, _, model){
+                return TabBarView(
+                  controller: _tabController,
+                  children: mainType.map((drinkType){
+                    return GestureDetector(
+                      onTap: (){
+                        var type;
+                        switch (drinkType.title){
+                          case "Coffee" :
+                            type = cofeeType;
+                          break;
+                          case "Tea" :
+                          type = teaType;
+                          break;
+                          case "Juice" :
+                            type = juiceType;
+                            break;
+                          default:
+                            throw "${drinkType.title} is not recognized";
+                        }
+                        _carouselTimer.cancel();
+                        model.updateDrinkList(type);
+                      },
+                      child: DrinkCards(
+                        drinkType: drinkType,
+                      ),
+                    );
+                  }).toList(),
                 );
-              }).toList(),
+              },
             ),
+
             Align(
               alignment: Alignment.bottomCenter,
               child: Padding(

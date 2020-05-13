@@ -4,27 +4,27 @@ import 'package:shopapp/model/DrinkType.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 List<DrinkType> mainType = <DrinkType>[
-  DrinkType ("Cofee","assets/img/cofee1.jpg", 20.0 ),
+  DrinkType ("Coffee","assets/img/cofee1.jpg", 20.0 ),
   DrinkType ("Tea","assets/img/cofee2.jpg", 20.0 ),
   DrinkType ("Juice","assets/img/cofee3.jpg", 20.0 ),
 ];
 
 List<DrinkType> cofeeType = <DrinkType>[
-  DrinkType ("Cofee","assets/img/cofee1.jpg", 20.0 ),
+  DrinkType ("Coffee","assets/img/cofee1.jpg", 20.0 ),
   DrinkType ("Tea","assets/img/cofee2.jpg", 20.0 ),
   DrinkType ("Juice","assets/img/cofee3.jpg", 20.0 ),
 ];
 
 List<DrinkType> teaType = <DrinkType>[
-  DrinkType ("Cofee","assets/img/cofee1.jpg", 20.0 ),
-  DrinkType ("Tea","assets/img/cofee2.jpg", 20.0 ),
+  DrinkType ("Tea","assets/img/cofee1.jpg", 20.0 ),
+  DrinkType ("Coffee","assets/img/cofee2.jpg", 20.0 ),
   DrinkType ("Juice","assets/img/cofee3.jpg", 20.0 ),
 ];
 
 List<DrinkType> juiceType = <DrinkType>[
-  DrinkType ("Cofee","assets/img/cofee1.jpg", 20.0 ),
+  DrinkType ("Juice","assets/img/cofee1.jpg", 20.0 ),
   DrinkType ("Tea","assets/img/cofee2.jpg", 20.0 ),
-  DrinkType ("Juice","assets/img/cofee3.jpg", 20.0 ),
+  DrinkType ("Coffee","assets/img/cofee3.jpg", 20.0 ),
 ];
 
 
