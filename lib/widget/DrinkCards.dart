@@ -7,10 +7,12 @@ List<DrinkType> mainType = <DrinkType>[
   DrinkType ("Coffee","assets/img/cofee1.jpg", 20.0 ),
   DrinkType ("Tea","assets/img/cofee2.jpg", 20.0 ),
   DrinkType ("Juice","assets/img/cofee3.jpg", 20.0 ),
+  DrinkType ("Drinks","assets/img/cofee3.jpg", 20.0 ),
 ];
 
 List<DrinkType> cofeeType = <DrinkType>[
   DrinkType ("Coffee","assets/img/cofee1.jpg", 20.0 ),
+  DrinkType ("Drinks","assets/img/cofee3.jpg", 20.0 ),
   DrinkType ("Tea","assets/img/cofee2.jpg", 20.0 ),
   DrinkType ("Juice","assets/img/cofee3.jpg", 20.0 ),
 ];
@@ -24,6 +26,7 @@ List<DrinkType> teaType = <DrinkType>[
 List<DrinkType> juiceType = <DrinkType>[
   DrinkType ("Juice","assets/img/cofee1.jpg", 20.0 ),
   DrinkType ("Tea","assets/img/cofee2.jpg", 20.0 ),
+  DrinkType ("Drinks","assets/img/cofee3.jpg", 20.0 ),
   DrinkType ("Coffee","assets/img/cofee3.jpg", 20.0 ),
 ];
 
