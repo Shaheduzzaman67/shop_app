@@ -22,6 +22,23 @@ class _DrinksCarouselState extends State<DrinksCarousel> with SingleTickerProvid
     super.dispose();
     _tabController.dispose();
   }
+
+  void _changeImage ({int delta, bool userInput= false}){
+  var newtabIndex= _tabController.index + delta;
+  if(newtabIndex>= cofeeType.length){
+    newtabIndex = 0;
+  }else if(newtabIndex <0){
+    newtabIndex = cofeeType.length-1;
+  }
+  _tabController.animateTo(
+    newtabIndex,
+    duration: Duration(
+      microseconds: 1000,
+    ),
+    curve: Curves.easeIn,
+  );
+}
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -63,6 +80,12 @@ class _DrinksCarouselState extends State<DrinksCarousel> with SingleTickerProvid
                   color: Colors.white,
                   size: 40.0,
                 ),
+                onPressed: (){
+                  _changeImage(
+                    delta:  -1,
+                    userInput: true
+                  );
+                },
               ),
             ),
             Align(
@@ -73,6 +96,12 @@ class _DrinksCarouselState extends State<DrinksCarousel> with SingleTickerProvid
                   color: Colors.white,
                   size: 40.0,
                 ),
+                onPressed: (){
+                  _changeImage(
+                    delta: 1,
+                    userInput: true,
+                  );
+                },
               ),
             ),
           ],
